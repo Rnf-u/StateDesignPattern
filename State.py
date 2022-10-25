@@ -5,6 +5,9 @@ class ITrafficState:
     def doAction(self):
         pass
 
+    def toggleState():
+        pass
+
 class OnTrafficState(ITrafficState):
     def __init__(self):
         self.states = {"STOP": 10, "GO": 20, "SLOW DOWN": 5}
