@@ -1,6 +1,8 @@
 from State import *
 
+
 class Light:
+    # ARRANGE
     def __init__(self):
         self.onState = OnTrafficState()
         self.offState = OffTrafficState()

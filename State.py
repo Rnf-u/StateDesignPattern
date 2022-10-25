@@ -1,6 +1,7 @@
 from Light import *
 from time import sleep
 
+
 class ITrafficState:
     def doAction(self):
         pass
@@ -8,10 +9,13 @@ class ITrafficState:
     def toggleState():
         pass
 
+
 class OnTrafficState(ITrafficState):
+    # ARRANGE
     def __init__(self):
         self.states = {"STOP": 10, "GO": 20, "SLOW DOWN": 5}
 
+    # ACT
     def timer(self):
         for x, y in self.states.items():
             print("------", x, "-------")
@@ -26,15 +30,15 @@ class OnTrafficState(ITrafficState):
         print("SWITCHING OFF...")
         light.state = light.offState
 
+
 class OffTrafficState(ITrafficState):
     def __init__(self):
         self.states = ["ON"]
 
+    # ASSERT
     def doAction(self):
         print("TRAFFIC LIGHT OFF!")
 
     def toggleState(self, light):
         print("SWITCHING ON...")
         light.state = light.onState
-
-
