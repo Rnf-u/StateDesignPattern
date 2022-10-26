@@ -3,9 +3,10 @@ from Light import *
 light = Light()
 light.state.doAction()
 
-# ASSERT
+# ARRANGE
 choice = int(input("Do you want to turn on the traffic light? (1=YES, 0=NO): "))
 
+# ASSERT
 if choice == 1:
     light.toggleState()
 
