@@ -12,6 +12,12 @@ class ITrafficState:
 
 class OnTrafficState(ITrafficState):
     # ARRANGE
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            #this executes when there is no instance yet, so it creates a new instance
+            cls.instance = super(OnTrafficState, cls).__new__(cls)
+        return cls.instance
+
     def __init__(self):
         self.states = {"STOP": 10, "GO": 20, "SLOW DOWN": 5}
 
@@ -32,6 +38,12 @@ class OnTrafficState(ITrafficState):
 
 
 class OffTrafficState(ITrafficState):
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            #this executes when there is no instance yet, so it creates a new instance
+            cls.instance = super(OffTrafficState, cls).__new__(cls)
+        return cls.instance
+
     def __init__(self):
         self.states = ["ON"]
 

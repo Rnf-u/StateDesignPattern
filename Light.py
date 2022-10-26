@@ -1,6 +1,5 @@
 from State import *
 
-
 class Light:
     # ARRANGE
     def __init__(self):
